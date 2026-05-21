@@ -79,7 +79,7 @@
                             <li class="flex items-center gap-2">
                                 <span v-if="specs.ramGB >= 4" class="text-green-500">✔</span>
                                 <span v-else class="text-red-500">✘</span>
-                                At least 4 GB of RAM (Detected: {{ specs.ramGB }} GB)
+                                At least 2 GB of RAM (Detected: {{ specs.ramGB }} GB)
                             </li>
 
                             <li class="flex items-center gap-2">
@@ -246,7 +246,6 @@
                                 toggled
                                 class="px-6"
                                 @click="currentStepIdx++"
-                                :disabled="!satisfiesPrequisites(specs, containerSpecs)"
                             >
                                 Next
                             </x-button>
