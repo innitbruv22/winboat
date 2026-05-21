@@ -679,16 +679,16 @@ async function addRequiredComposeFieldsUSB() {
 const errors = computedAsync(async () => {
     let errCollection: string[] = [];
 
-    if (!numCores.value || numCores.value < 2) {
-        errCollection.push("You must allocate at least two CPU cores for Windows to run properly");
+    if (!numCores.value || numCores.value < 1) {
+        errCollection.push("You must allocate at least one CPU cores for Windows to run properly");
     }
 
     if (numCores.value > maxNumCores.value) {
         errCollection.push("You cannot allocate more CPU cores to Windows than you have available");
     }
 
-    if (!ramGB.value || ramGB.value < 4) {
-        errCollection.push("You must allocate at least 4 GB of RAM for Windows to run properly");
+    if (!ramGB.value || ramGB.value < 2) {
+        errCollection.push("You must allocate at least 2 GB of RAM for Windows to run properly");
     }
 
     if (ramGB.value > maxRamGB.value) {
